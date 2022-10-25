@@ -1,0 +1,14 @@
+file_format: "1"
+id: nemm_v1
+name: NEMM V1 Keyboard
+type: board
+arch: arm
+features:
+  - keys
+  - RGB
+  - Display
+outputs:
+  - usb
+  - ble
+url:
+  - https://github.com/kien242/ZMK-config-split-keyboards/tree/nemm
