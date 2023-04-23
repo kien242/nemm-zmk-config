@@ -58,7 +58,7 @@
 		};
 	};
 	
-	&spi1 {
+	&spi3 {
 		status = "okay";
 		
 		mosi-pin = <19>;

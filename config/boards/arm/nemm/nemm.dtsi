@@ -42,16 +42,24 @@
 	status = "okay";
 };
 
-&spi1 {
-	compatible = "nordic,nrf-spim";
-};
-
 &i2c0 {
  	compatible = "nordic,nrf-twi";
 };
 
 
 &spi0 {
+	compatible = "nordic,nrf-spim";
+};
+
+&spi1 {
+	compatible = "nordic,nrf-spim";
+};
+
+&spi2 {
+	compatible = "nordic,nrf-spim";
+};
+
+&spi3 {
 	compatible = "nordic,nrf-spim";
 };
 
