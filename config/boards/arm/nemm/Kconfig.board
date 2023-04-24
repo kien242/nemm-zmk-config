@@ -9,3 +9,11 @@ config BOARD_NEMM_V1_LEFT
 config BOARD_NEMM_V1_RIGHT
 	bool "nemm v1 right"
 	depends on SOC_NRF52840_QIAA
+
+config BOARD_NEMM_V2_LEFT
+	bool "nemm v2 left"
+	depends on SOC_NRF52840_QIAA
+
+config BOARD_NEMM_V2_RIGHT
+	bool "nemm v2 right"
+	depends on SOC_NRF52840_QIAA

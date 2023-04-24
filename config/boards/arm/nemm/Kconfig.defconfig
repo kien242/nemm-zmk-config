@@ -39,8 +39,30 @@ endchoice
 endif # ZMK_DISPLAY
 endif # BOARD_NEMM_V1_LEFT
 
+if BOARD_NEMM_V2_LEFT
 
-if BOARD_NEMM_V1_LEFT || BOARD_NEMM_V1_RIGHT
+config ZMK_KEYBOARD_NAME
+	default "Nemm v2 Left"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+if ZMK_DISPLAY
+config SPI
+	default y
+config SPI_NRFX
+    default y
+
+config LVGL
+    default y
+
+config LV_Z_BITS_PER_PIXEL
+	default 16
+
+endif # ZMK_DISPLAY
+endif # BOARD_NEMM_V2_LEFT
+
+if BOARD_NEMM_V1_LEFT || BOARD_NEMM_V1_RIGHT || BOARD_NEMM_V2_LEFT || BOARD_NEMM_V2_RIGHT
 
 config BOARD
 	default "Nemm v1"
