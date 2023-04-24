@@ -1,13 +1,12 @@
 /*
- * Copyright (c) 2022 kien242
- *
- * SPDX-License-Identifier: MIT
- */
+# Copyright (c) 2021 The ZMK Contributors
+*
+* SPDX-License-Identifier: MIT
+*/
 
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/led/led.h>
 
 / {
 	model = "nemm";
@@ -18,9 +17,9 @@
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
 		zephyr,console = &cdc_acm_uart;
-		zmk,kscan = &kscan0;
 	};
 };
+
 
 &adc {
 	status = "okay";
@@ -36,31 +35,6 @@
 
 &gpio1 {
 	status = "okay";
-};
-
-&usbd {
-	status = "okay";
-};
-
-&i2c0 {
- 	compatible = "nordic,nrf-twi";
-};
-
-
-&spi0 {
-	compatible = "nordic,nrf-spim";
-};
-
-&spi1 {
-	compatible = "nordic,nrf-spim";
-};
-
-&spi2 {
-	compatible = "nordic,nrf-spim";
-};
-
-&spi3 {
-	compatible = "nordic,nrf-spim";
 };
 
 &usbd {
