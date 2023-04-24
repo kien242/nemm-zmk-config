@@ -48,6 +48,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
 if ZMK_DISPLAY
+
 config ST7735R
    default y
 
