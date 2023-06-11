@@ -9,7 +9,7 @@
 
 /{
 	chosen {
-		zephyr,display = &st7735_display;
+		zephyr,display = &oled;
 		zmk,battery = &vbatt;
 		zmk,underglow = &led_strip;
 	};
