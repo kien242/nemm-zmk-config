@@ -42,11 +42,11 @@
 			;
 	};
 
-	// ext-power {
-	// 	compatible = "zmk,ext-power-generic";
-	// 	label = "EXT_POWER";
-	// 	control-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;   /*0.08*/
-	// };
+	 ext-power {
+	 	compatible = "zmk,ext-power-generic";
+	 	label = "EXT_POWER";
+	 	control-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;   /*0.08*/
+	 };
 
 	vbatt: vbatt {
 		compatible = "zmk,battery-voltage-divider";
@@ -58,38 +58,28 @@
 
 };
 
-&spi0 {
-	compatible = "nordic,nrf-spim";
-	status = "okay";
-	pinctrl-0 = <&spi0_default>;
-	pinctrl-1 = <&spi0_sleep>;
-	pinctrl-names = "default", "sleep";
-	cs-gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
+&i2c0 {
+	compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    status = "okay";
 
-	st7735_display: st7735r@0{
-		compatible = "sitronix,st7735r";
-		spi-max-frequency = <20000000>;
-		reg = <0>;
-		cmd-data-gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;	/* D9 */
-		reset-gpios = <&gpio1 14 GPIO_ACTIVE_LOW>;	/* D8 */
-		width = <160>;
-		height = <128>;
-		x-offset = <0>;
-		y-offset = <0>;
-		madctl = <0x60>;
-		colmod = <0x55>;
-		vmctr1 = <0x0e>;
-		pwctr1 = [a2 02 84];
-		pwctr2 = [c5];
-		pwctr3 = [0a 00];
-		pwctr4 = [8a 2a];
-		pwctr5 = [8a ee];
-		frmctr1 = [01 2c 2d];
-		frmctr2 = [01 2c 2d];
-		frmctr3 = [01 2c 2d 01 2c 2d];
-		gamctrp1 = [02 1c 07 12 37 32 29 2d 29 25 2b 39 00 01 03 10];
-		gamctrn1 = [03 1d 07 06 2e 2c 29 2d 2e 2e 37 3f 00 00 02 10];
-	};
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "DISPLAY";
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        prechargep = <0x22>;
+    };
 };
 
 &spi3 {
