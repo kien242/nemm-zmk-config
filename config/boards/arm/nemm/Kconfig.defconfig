@@ -48,20 +48,30 @@ config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
 if ZMK_DISPLAY
-
-config ST7735R
-   default y
-
-config SPI
+config I2C
 	default y
-config SPI_NRFX
-    default y
-
+	
 config LVGL
     default y
 
+config SSD1306
+	default y
+
+config SSD1306_REVERSE_MODE
+	default y
+
+config LV_Z_VDB_SIZE
+	default 64
+
+config LV_Z_DPI
+	default 148
+
 config LV_Z_BITS_PER_PIXEL
-	default 16
+	default 1
+
+choice LV_COLOR_DEPTH
+	default LV_COLOR_DEPTH_1
+endchoice
 
 endif # ZMK_DISPLAY
 endif # BOARD_NEMM_V2_LEFT
