@@ -44,7 +44,7 @@
 	ext-power {
 		compatible = "zmk,ext-power-generic";
 		label = "EXT_POWER";
-		control-gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;   /*0.14*/
+		control-gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;   /*0.14*/
 	};
 	
 	vbatt: vbatt {
