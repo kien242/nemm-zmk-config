@@ -1,0 +1,15 @@
+file_format: "1"
+id: nemm_v2
+name: NEMM_V2
+url: 
+type: board
+arch: arm
+features:
+  - keys
+  - display
+outputs:
+  - usb
+  - ble
+siblings:
+  - nemm_v2_left
+  - nemm_v2_right
