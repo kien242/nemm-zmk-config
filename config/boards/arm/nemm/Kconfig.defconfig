@@ -107,4 +107,4 @@ config WS2812_STRIP
 
 endif # RGB underglow
 
-endif # BOARD_NEMM_V1_LEFT || BOARD_NEMM_V1_RIGHT
+endif 
