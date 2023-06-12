@@ -45,13 +45,13 @@
 	 ext-power {
 	 	compatible = "zmk,ext-power-generic";
 	 	label = "EXT_POWER";
-	 	control-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;   /*0.08*/
+	 	control-gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;   /*0.08*/
 	 };
 
 	vbatt: vbatt {
 		compatible = "zmk,battery-voltage-divider";
 		label = "BATTERY";
-		io-channels = <&adc 2>;
+		io-channels = <&adc 3>;
 		output-ohms = <10000000>;
 		full-ohms   = <(10000000 + 4000000)>;
 	};
